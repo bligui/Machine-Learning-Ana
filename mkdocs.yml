@@ -1,0 +1,144 @@
+site_name: Entregas de Machine Learning
+site_author: Ana Carolina Frank
+site_url: https://bligui.github.io/Machine-Learning-Ana
+repo_url: https://github.com/bligui/Machine-Learning-Ana
+repo_name: github/Machine-Learning-Ana
+
+theme:
+  name: material
+  palette:
+    # Light mode - Pêssego pastel
+    - scheme: default
+      primary: "#FFDAB9"   # Pêssego pastel
+      accent: "#FFE5B4"    # Pêssego mais claro
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    # Automatic mode - Mesma paleta pêssego pastel
+    - media: "(prefers-color-scheme)"
+      primary: "#FFDAB9"
+      accent: "#FFE5B4"
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+    # Light mode explicit - Mesma paleta pêssego pastel
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      primary: "#FFDAB9"
+      accent: "#FFE5B4"
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    # Dark mode - Pêssego suave adaptado para contraste
+    - media: "(prefers-color-scheme: dark)"
+      primary: "#FFBC9A"   # Pêssego um pouco mais profundo
+      accent: "#FFDAB9"    # Pêssego pastel
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to system preference
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - content.tooltips
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.top
+    - navigation.path
+    - navigation.tracking
+    - navigation.expand
+  icon:
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - markdown_grid_tables
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      url_download: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: python
+          class: python
+          validator: !!python/name:markdown_exec.validator
+          format: !!python/name:markdown_exec.formatter
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true  
+  - footnotes
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.blocks.caption
+  - tables
+      
+plugins:
+  - glightbox
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-authors
+  - git-committers:
+      repository: hsandmann/hsandmann.github.com
+      branch: main
+  - search
+  - badges
+  - minify:
+      minify_html: true
+  - markdown-exec
+  - render_swagger:
+      allow_arbitrary_locations : true
+  - termynal:
+      prompt_literal_start:
+        - "$"
+        - ">"
+
+extra_javascript:
+  - https://unpkg.com/mathjax/es5/tex-mml-chtml.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js
+  - https://fastly.jsdelivr.net/npm/echarts/dist/echarts.min.js
+
+nav:
+  - Home: index.md
+  - Exercícios:
+    - arvore de decisao: ./Arvore-decisao/main.md
+    - Roteiro 1: ./roteiro1/main.md
+    - Roteiro 2: ./roteiro2/main.md
+    - Roteiro 3: ./roteiro3/main.md
+    - Roteiro 4: ./roteiro4/main.md
+  - Projeto: ./projeto/main.md
