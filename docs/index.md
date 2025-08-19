@@ -19,7 +19,7 @@
 
 ## Entregas
 
-- [x] Exercício 1 - Data 21/08/2025
+- [x] Exercício 1 - Data 29/08/2025
 - [ ] Exercício 2
 - [ ] Exercício 3
 - [ ] Exercício 4
@@ -33,7 +33,7 @@
 
 Vídeo legal
 
-<iframe width="100%" height="470" src="https://www.youtube.com/watch?v=pQwJnio3rFk&list=RDpQwJnio3rFk&start_radio=1" allowfullscreen></iframe>
+<iframe width="100%" height="470" src="https://youtu.be/R2-yomhYAj4?list=RDR2-yomhYAj4" allowfullscreen></iframe>
 
 
 ## Referências

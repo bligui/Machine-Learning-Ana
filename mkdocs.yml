@@ -7,35 +7,35 @@ repo_name: github/Machine-Learning-Ana
 theme:
   name: material
   palette:
-    # Light mode - Pêssego pastel
+    # Light mode
     - scheme: default
-      primary: "#FFDAB9"   # Pêssego pastel
-      accent: "#FFE5B4"    # Pêssego mais claro
+      primary: pink
+      accent: pink
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
 
-    # Automatic mode - Mesma paleta pêssego pastel
+    # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: "#FFDAB9"
-      accent: "#FFE5B4"
+      primary: pink
+      accent: pink
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
 
-    # Light mode explicit - Mesma paleta pêssego pastel
+    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default 
-      primary: "#FFDAB9"
-      accent: "#FFE5B4"
+      primary: pink
+      accent: pink
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
 
-    # Dark mode - Pêssego suave adaptado para contraste
+    # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      primary: "#FFBC9A"   # Pêssego um pouco mais profundo
-      accent: "#FFDAB9"    # Pêssego pastel
+      primary: pink
+      accent: pink
       scheme: slate
       toggle:
         icon: material/toggle-switch
@@ -52,6 +52,7 @@ theme:
     - navigation.tracking
     - navigation.expand
   icon:
+    # logo: assets/images/devops
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
