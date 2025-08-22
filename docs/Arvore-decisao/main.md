@@ -5,7 +5,7 @@ Para o projeto foi utilizado o dataset [Fraud in Financial System]{:target='blan
 
 ## Pré-processamento
 ``` python
---8<-- "./docs/Arvore-decisao/decision-tree.py"
+--8<-- "./docs/arvore-decisao/decision-tree.py"
 ```
 
 ## Divisão dos Dados
