@@ -10,17 +10,6 @@ df = pd.read_csv("https://raw.githubusercontent.com/bligui/Machine-Learning-Ana/
 df.fillna(df.median(numeric_only=True), inplace=True)
 df = df.drop_duplicates()
 
-# ENCODING
-df["Sex"] = df["Sex"].map({"M": 1, "F": 0})
-df["ChestPainType"] = df["ChestPainType"].map({"TA": 0, "ATA": 1, "NAP": 2, "ASY": 3})
-df["RestingECG"] = df["RestingECG"].map({"Normal": 0, "ST": 1, "LVH": 2})
-df["ExerciseAngina"] = df["ExerciseAngina"].map({"Y": 1, "N": 0})
-df["ST_Slope"] = df["ST_Slope"].map({"Up": 0, "Flat": 1, "Down": 2})
-
-# NORMALIZAÇÃO
-numeric_cols = df.select_dtypes(include=[np.number]).columns
-df[numeric_cols] = (df[numeric_cols] - df[numeric_cols].min()) / (df[numeric_cols].max() - df[numeric_cols].min())
-df[numeric_cols] = (df[numeric_cols] - df[numeric_cols].mean()) / df[numeric_cols].std()
 
 # --- PLOT ---
 fig, ax = plt.subplots(1, 1, figsize=(8, 5))

@@ -207,8 +207,7 @@ No código, a divisão foi feita com `train_test_split` do scikit-learn, garanti
 === "Code"
 
     ```python
-    # Divisão dos Dados
-
+    # dividir variáveis
     X = df.drop("HeartDisease", axis=1)
     y = df["HeartDisease"]
 
@@ -219,15 +218,13 @@ No código, a divisão foi feita com `train_test_split` do scikit-learn, garanti
 ### 4. Treinamento do Modelo
 O modelo **Decision Tree Classifier** foi criado e treinado com os dados de treino (`X_train` e `y_train`).  
 - Cada nó da árvore representa uma decisão baseada em uma feature.  
-- Cada folha da árvore representa a classe final prevista (`No Disease` ou `Disease`).  
+- Cada folha da árvore representa a classe final prevista (`0 = No Disease` ou `1 = Disease`).  
 
 O treinamento foi realizado com:
 === "Code"
 
     ```python
-    # Treinamento Decision Tree
-
-    classifier = tree.DecisionTreeClassifier(random_state=42)
+    classifier = tree.DecisionTreeClassifier(max_depth=3, random_state=42)
     classifier.fit(X_train, y_train)
     ```
 ---
@@ -255,7 +252,7 @@ No código, a avaliação foi feita com:
 ### 6. Relatório Final
 O desenvolvimento do projeto começou pela exploração do conjunto de dados, onde foram observadas características importantes como a predominância do sexo masculino e a maior probabilidade de diagnóstico positivo entre pacientes assintomáticos. Também foi identificada a presença de valores extremos em colesterol e pressão arterial, o que reforçou a necessidade de um bom pré-processamento.
 
-O resultado obtido apresentou uma **acurácia em torno de 77%**, mostrando que o modelo conseguiu capturar bem os padrões presentes no conjunto de dados. A análise da árvore evidenciou a relevância de variáveis como `ChestPainType`, `ST_Slope` e `Oldpeak`.
+O resultado obtido apresentou uma **acurácia em torno de 83%**, mostrando que o modelo conseguiu capturar bem os padrões presentes no conjunto de dados. A análise da árvore evidenciou a relevância de variáveis como `ChestPainType`, `ST_Slope` e `Oldpeak`.
 
 Embora os resultados tenham sido positivos, algumas melhorias podem ser consideradas. Entre elas, destacar o uso de mais de um modelo para comparar desempenhos, a aplicação de validação cruzada para obter uma medida mais estável e a análise de métricas além da acurácia, como precisão e recall. Essas ações simples já poderiam aumentar a confiabilidade do modelo e oferecer uma visão mais completa de seu desempenho.
 
