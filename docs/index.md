@@ -24,11 +24,4 @@ Aqui serão listadas as entregas realizadas, com data e breve descrição. O rep
 > Abaixo, você pode acompanhar o progresso das atividades:
 
 - [x] Árvore de Decisão - Data 29/08/2025
-- [ ] Exercício 2
-- [ ] Exercício 3
-- [ ] Exercício 4
-- [ ] Exercício 6
-- [ ] Exercício 7
-- [ ] Exercício 8
-- [ ] Exercício 9
-- [ ] Exercício 10
+- [ ] KNN

@@ -138,3 +138,4 @@ nav:
   - Home: index.md
   - Exercícios:
     - Árvore de Decisão: ./roteiro1/main.md
+    - KNN: ./roteiro2/main.md
