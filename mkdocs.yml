@@ -1,8 +1,8 @@
 site_name: Entregas de Machine Learning
 site_author: Ana Carolina Frank
-site_url: https://bligui.github.io/Machine-Learning-Projetos
-repo_url: https://github.com/bligui/Machine-Learning-Projetos
-repo_name: github/Machine-Learning-Projetos
+site_url: https://bligui.github.io/Machine-Learning-Ana
+repo_url: https://github.com/bligui/Machine-Learning-Ana
+repo_name: github/Machine-Learning-Ana
 
 theme:
   name: material
@@ -137,5 +137,4 @@ extra_javascript:
 nav:
   - Home: index.md
   - Exercícios:
-    - Projeto 1: ./projeto/main.md
-    - Projeto 2: ./projeto2/main.md
+    - Árvore de Decisão: ./roteiro1/main.md
