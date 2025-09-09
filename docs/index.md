@@ -24,4 +24,5 @@ Aqui serão listadas as entregas realizadas, com data e breve descrição. O rep
 > Abaixo, você pode acompanhar o progresso das atividades:
 
 - [x] Árvore de Decisão - Data 29/08/2025
-- [ ] KNN
+- [x] KNN - Data 16/09/2025
+- [ ] K-Means

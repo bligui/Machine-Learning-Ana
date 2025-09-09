@@ -1,4 +1,4 @@
-# Projeto de Predição de Doenças Cardiovasculares
+# Árvore de Decisão - Doenças Cardiovasculares
 
 Este projeto tem como objetivo aplicar técnicas de **Machine Learning** para prever a presença de doenças cardiovasculares a partir de variáveis clínicas. O desenvolvimento segue etapas bem definidas, cada uma com critérios e pontuação, conforme especificado na rubrica do projeto.
 
