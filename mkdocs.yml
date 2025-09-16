@@ -139,3 +139,5 @@ nav:
   - Exercícios:
     - Árvore de Decisão: ./roteiro1/main.md
     - KNN: ./roteiro2/main.md
+    - K-Means: ./roteiro3/main.md
+    - Métricas: ./roteiro4/main.md
