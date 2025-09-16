@@ -8,29 +8,29 @@ O KNN é um modelo baseado em instâncias, que classifica cada observação de a
 
 ---
 
-### Seleção de Variáveis para Visualização
+### Objetivo
+Avaliar a relação entre a idade e o colesterol dos pacientes e como essas variáveis podem ser utilizadas para prever risco de doença cardíaca (HeartDisease), utilizando o algoritmo de classificação K-Nearest Neighbors (KNN).
 
+### Variáveis Utilizadas
 Para gerar a fronteira de decisão e facilitar a interpretação dos resultados, escolhemos as variáveis:
 
 `Age` (Idade): fator de risco importante e diretamente associado a doenças cardiovasculares.
 
-`Oldpeak` (Depressão do Segmento ST): medida obtida no eletrocardiograma (ECG) que indica a diferença entre o nível de repouso e o nível durante o exercício. Valores alterados podem sugerir isquemia miocárdica, ou seja, redução do fluxo sanguíneo para o coração, sendo altamente relevantes no diagnóstico de doenças cardíacas.
+`Cholesterol` (Colesterol sérico): medido em mg/dl. Níveis altos de colesterol podem indicar risco de acúmulo de placas nas artérias, levando à aterosclerose e maior chance de infarto.
 
-A escolha dessas duas variáveis se justifica porque elas apresentam boa variação na base de dados, não sofrem tanto com valores artificiais como ocorre em colesterol e pressão, e têm forte relevância clínica.
+Essas variáveis foram escolhidas porque idade e colesterol estão entre os indicadores mais relevantes na literatura médica para estimar risco cardíaco.
 
 ---
 
-### Treinamento e Avaliação
+### Metodologia
+No pré-processamento, foi necessário a normalização de `Age` e `Cholesterol` para trazer ambos para a mesma escala (0 e 1). Depois, fiz a separação e o teste.
 
-O modelo foi treinado com a mesma divisão de dados da Árvore de Decisão:
+A  aplicação do KNN foi com k=3. Ou seja, o modelo classifica um paciente conforme a classe mais frequente entre seus 3 vizinhos mais próximos.
 
-- **Treino (70%)**
-- **Teste (30%)**
-
-O desempenho do modelo foi medido com a acurácia (accuracy), que representa a proporção de classificações corretas no conjunto de teste.
-
-- **Acurácia obtida: 0.84 (84%)**
-
+### Resultados Obtidos
+- **Doença cardíaca presente (1): 0.55 (55%)**
+- **Doença cardíaca ausente (0): 0.44 (44%)**
+- **Acurácia obtida: 0.89 (89%)**
 
 === "Result"
 
@@ -45,6 +45,14 @@ O desempenho do modelo foi medido com a acurácia (accuracy), que representa a p
     ```
 ---
 
+### Interpretação
+- Não há uma separação linear clara entre idade, colesterol e risco de doença cardíaca.
+
+- O KNN conseguiu aproveitar pequenas variações locais e capturar regiões de maior risco, mesmo com sobreposição de dados.
+
+- A alta acurácia (0.89) sugere que, mesmo com apenas duas variáveis, já é possível obter uma predição relevante.
+
+- Contudo, na prática clínica, idade e colesterol não são suficientes isoladamente para um diagnóstico: outros fatores como pressão arterial, diabetes, histórico familiar e estilo de vida devem ser considerados.
+
 ### Conclusões
-O modelo KNN apresentou um desempenho semelhante ao da Árvore de Decisão, com acurácia em torno de 84%. Isso reforça a consistência dos padrões encontrados no dataset, independentemente do algoritmo utilizado.
-No entanto, como o KNN classifica novos exemplos com base na distância em relação aos dados de treino, ele pode ser mais sensível a ruídos e outliers. Além disso, a escolha do valor de `k` influencia diretamente o resultado, sendo necessário avaliar diferentes valores para identificar o melhor ajuste.
+O modelo KNN aplicado em Age vs Cholesterol obteve 89% de acurácia, mostrando que essas variáveis trazem informações relevantes, mas não são suficientes sozinhas para explicar completamente a ocorrência de doenças cardíacas.

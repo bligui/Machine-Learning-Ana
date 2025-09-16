@@ -7,9 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 
-plt.figure(figsize=(12, 10))
-
-# --- Pré-processamento ---
+# pre processamento
 def preprocess(df):
     df.fillna(df.median(numeric_only=True), inplace=True)
     df["Sex"] = df["Sex"].map({"M": 1, "F": 0})
@@ -19,50 +17,71 @@ def preprocess(df):
     df["ST_Slope"] = df["ST_Slope"].map({"Up": 0, "Flat": 1, "Down": 2})
     return df
 
-# Carregar dataset
+# dataset
 df = pd.read_csv("https://raw.githubusercontent.com/bligui/Machine-Learning-Ana/refs/heads/main/dados/heart.csv")
 df = preprocess(df)
 
-# Normalização (Min-Max)
+# Verificar balanceamento da variável alvo
+# print("Distribuição da variável alvo (HeartDisease):")
+# print(df["HeartDisease"].value_counts(normalize=True))
+
+# norm
 numeric_cols = df.select_dtypes(include=[np.number]).columns
 df[numeric_cols] = (df[numeric_cols] - df[numeric_cols].min()) / (df[numeric_cols].max() - df[numeric_cols].min())
 
-# Features e target
 X = df.drop("HeartDisease", axis=1)
 y = df["HeartDisease"]
 
-# Treino/teste
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Treinar modelo
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
+
+
 knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X_train, y_train)
 predictions = knn.predict(X_test)
-print(f"Accuracy: {accuracy_score(y_test, predictions):.2f}")
+print(f"\nAccuracy: {accuracy_score(y_test, predictions):.2f}")
 
 
-X_vis = X[["Age", "MaxHR"]].values
-y_vis = y.values
-X_train_vis, X_test_vis, y_train_vis, y_test_vis = train_test_split(X_vis, y_vis, test_size=0.2, random_state=42)
+X_vis = df[["Age", "Cholesterol"]].values
+y_vis = df["HeartDisease"].values
+
+X_train_vis, X_test_vis, y_train_vis, y_test_vis = train_test_split(
+    X_vis, y_vis, test_size=0.2, random_state=42, stratify=y_vis
+)
 
 knn_vis = KNeighborsClassifier(n_neighbors=3)
 knn_vis.fit(X_train_vis, y_train_vis)
 
+# Grade para decisão
 h = 0.02
-x_min, x_max = X_vis[:, 0].min() - 1, X_vis[:, 0].max() + 1
-y_min, y_max = X_vis[:, 1].min() - 1, X_vis[:, 1].max() + 1
+x_min, x_max = X_vis[:, 0].min() - 0.1, X_vis[:, 0].max() + 0.1
+y_min, y_max = X_vis[:, 1].min() - 0.1, X_vis[:, 1].max() + 0.1
 xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
 
 Z = knn_vis.predict(np.c_[xx.ravel(), yy.ravel()])
 Z = Z.reshape(xx.shape)
 
+# Plotar
+plt.figure(figsize=(12, 10))
 plt.contourf(xx, yy, Z, cmap=plt.cm.RdYlBu, alpha=0.3)
-sns.scatterplot(x=X_vis[:, 0], y=X_vis[:, 1], hue=y_vis, style=y_vis, palette="deep", s=100)
-plt.xlabel("Age")
-plt.ylabel("MaxHR")
+
+sns.scatterplot(
+    x=X_vis[:, 0],
+    y=X_vis[:, 1],
+    hue=y_vis,
+    style=y_vis,
+    palette="deep",
+    s=80,
+    edgecolor="k",
+    alpha=0.8
+)
+
+plt.xlabel("Age (normalizado)")
+plt.ylabel("Cholesterol (normalizado)")
 plt.title("KNN Decision Boundary (k=3)")
 
-# Display the plot
 buffer = StringIO()
 plt.savefig(buffer, format="svg", transparent=True)
 print(buffer.getvalue())
