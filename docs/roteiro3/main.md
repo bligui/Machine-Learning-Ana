@@ -1,15 +1,19 @@
 # K-Means - Doenças Cardiovasculares
-Aplicar o algoritmo de K-Means ao dataset de doenças cardíacas para verificar se é possível identificar grupos de pacientes com perfis semelhantes, sem utilizar a variável alvo (HeartDisease). O objetivo aqui não é prever, mas descobrir padrões ocultos (aprendizado não supervisionado).
+
+---
 
 **O Pré-Processamento já foi feito e pode ser encontrado em: [Árvore de Decisão](https://bligui.github.io/Machine-Learning-Ana/roteiro1/main/#2-pre-processamento){:target='_blank'}**
 
-### Algoritmo
+---
+### Objetivo
+Aplicar o algoritmo de K-Means ao dataset de doenças cardíacas para verificar se é possível identificar grupos de pacientes com perfis semelhantes, sem utilizar a variável alvo (HeartDisease). O objetivo aqui não é prever, mas descobrir padrões ocultos (aprendizado não supervisionado).
+
+### Metodologia
 K-Means configurado com:
 - `n_clusters=3` (três grupo)
 - `init="k-means++"` (boa inicialização dos centróides)
 - `max_iter=300` (número máximo de iterações)
 
-### Visualização
 Como os dados têm múltiplas dimensões, aplicou-se PCA (Análise de Componentes Principais) para reduzir para 2 dimensões (PC1 e PC2), permitindo representar os clusters graficamente.
 
 ### Resultados Obtidos

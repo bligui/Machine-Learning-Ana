@@ -25,4 +25,5 @@ Aqui serão listadas as entregas realizadas, com data e breve descrição. O rep
 
 - [x] Árvore de Decisão - Data 29/08/2025
 - [x] KNN - Data 16/09/2025
-- [ ] K-Means
+- [x] K-Means - Data 23/09/2025
+- [x] Métricas de Avaliação - Data 28/09/2025

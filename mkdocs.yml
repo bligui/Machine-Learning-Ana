@@ -137,7 +137,7 @@ extra_javascript:
 nav:
   - Home: index.md
   - Exercícios:
-    - Árvore de Decisão: ./roteiro1/main.md
-    - KNN: ./roteiro2/main.md
-    - K-Means: ./roteiro3/main.md
-    - Métricas: ./roteiro4/main.md
+    - 1. Árvore de Decisão: ./roteiro1/main.md
+    - 2. KNN: ./roteiro2/main.md
+    - 3. K-Means: ./roteiro3/main.md
+    - 4. Métricas de Avaliação: ./roteiro4/main.md

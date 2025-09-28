@@ -2,8 +2,6 @@
 
 ---
 
-O KNN é um modelo baseado em instâncias, que classifica cada observação de acordo com as classes mais frequentes entre seus vizinhos mais próximos em um espaço multidimensional. Neste caso, optei por utilizar k = 3 vizinhos.
-
 **O Pré-Processamento já foi feito e pode ser encontrado em: [Árvore de Decisão](https://bligui.github.io/Machine-Learning-Ana/roteiro1/main/#2-pre-processamento){:target='_blank'}**
 
 ---
