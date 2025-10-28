@@ -141,3 +141,4 @@ nav:
     - 2. KNN: ./roteiro2/main.md
     - 3. K-Means: ./roteiro3/main.md
     - 4. Métricas de Avaliação: ./roteiro4/main.md
+    - 5. Random Forest: ./roteiro5/main.md

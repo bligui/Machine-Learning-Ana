@@ -27,3 +27,6 @@ Aqui serão listadas as entregas realizadas, com data e breve descrição. O rep
 - [x] KNN - Data 16/09/2025
 - [x] K-Means - Data 23/09/2025
 - [x] Métricas de Avaliação - Data 28/09/2025
+- [] Random Forest
+- [] Support Vector Machine
+- [] Page Rank
