@@ -142,3 +142,6 @@ nav:
     - 3. K-Means: ./roteiro3/main.md
     - 4. Métricas de Avaliação: ./roteiro4/main.md
     - 5. Random Forest: ./roteiro5/main.md
+    - 6. Page Rank: ./roteiro6/main.md
+    - 7. PySpark: ./roteiro7/main.md
+    - 8. SVM: ./roteiro8/main.md
