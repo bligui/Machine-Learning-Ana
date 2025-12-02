@@ -28,6 +28,5 @@ Aqui serão listadas as entregas realizadas, com data e breve descrição. O rep
 - [x] K-Means - Data 23/09/2025
 - [x] Métricas de Avaliação - Data 28/09/2025
 - [x] Random Forest - Data 28/10/2025
-- [ ] Page Rank
-- [ ] PySpark
+- [x] Page Rank
 - [ ] Support Vector Machine
