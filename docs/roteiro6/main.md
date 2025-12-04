@@ -27,4 +27,161 @@ Este é um dos maiores e mais tradicionais datasets de confiança presentes no r
 
 ---
 
+## Implementação
+Foi feita uma implementação manual usando power iteration, com:
+
+- fator de amortecimento: d = 0.85
+
+- tolerância: 1e-6
+
+- máximo de iterações: 200
+
+
+
+=== "Result"
+
+    ```python exec="1" html="1"
+    --8<-- "docs/roteiro6/dataset.py"
+    ```
+
+=== "Code"
+
+    ```python
+    --8<-- "docs/roteiro6/dataset.py"
+    ```
+
+
+A convergência foi rápida e compatível com o esperado para grafos grandes.
+
+---
+
+## Comparação entre as duas implementações
+As duas listas de top-10 foram praticamente idênticas, com diferenças insignificantes (< 1e-6), resultado de arredondamentos e tolerâncias.
+
+**TOP 10 – PageRank (Implementação do Zero)**
+
+=== "Result"
+
+    ```python exec="1" html="1"
+    --8<-- "docs/roteiro6/comparação1.py"
+    ```
+
+=== "Code"
+
+    ```python
+    --8<-- "docs/roteiro6/comparação1.py"
+    ```
+
+**TOP 10 – PageRank (NetworkX)**
+=== "Result"
+
+    ```python exec="1" html="1"
+    --8<-- "docs/roteiro6/comparação2.py"
+    ```
+
+=== "Code"
+
+    ```python
+    --8<-- "docs/roteiro6/comparação2.py"
+    ```
+
+- Os nós mais importantes da rede aparecem simultaneamente nos dois métodos.
+
+- O nó 18 é o mais influente da rede.
+
+- A diferença entre os scores dos dois métodos é mínima (convergência consistente).
+
+- Isso valida a correção da implementação manual.
+---
+
+## Correlações Entre os Dois PageRanks
+
+Para verificar consistência, foram calculadas correlações entre os vetores completos de PR.
+
+=== "Result"
+
+    ```python exec="1" html="1"
+    --8<-- "docs/roteiro6/correlacao.py"
+    ```
+
+=== "Code"
+
+    ```python
+    --8<-- "docs/roteiro6/correlacao.py"
+    ```
+
+Esses valores extremamente altos indicam:
+
+- As implementações são equivalentes na prática.
+
+- A ordenação global dos nós é quase idêntica.
+
+- As pequenas diferenças surgem apenas de tolerância numérica.
+
+---
+
+## Gráfico de Comparação
+O scatter plot (1000 primeiros nós) mostra uma linha quase perfeita:
+
+| Scatter Plot |
+|-----------|
+| ![ScatterPlot](Figure_1.png) |
+
+- Os pontos estão praticamente sobre a diagonal, confirmando equivalência.
+
+- A pequena dispersão em valores muito baixos ocorre devido à natureza esparsa da rede.
+
+---
+
+## Interpretação dos Resultados
+**Por que esses nós têm maior PageRank?** 
+
+O PageRank não mede apenas “quantos links um nó recebe”, mas a qualidade desses links.
+Nós como 18, 737 e 118:
+
+- Recebem links de usuários que também têm PageRank alto.
+
+- Estão posicionados em regiões densas da rede.
+
+- Servem como "hubs" de confiança: muitos confiam neles, inclusive pessoas muito confiáveis.
+
+Esses nós provavelmente representam:
+
+- Usuários veteranos com histórico de boas avaliações.
+
+- Pessoas reconhecidas pela comunidade como confiáveis.
+
+- Influenciadores na rede Epinions.
+
+**Impacto da estrutura da rede**
+
+A rede Epinions é conhecida como:
+
+- altamente assimétrica,
+
+- com distribuição de grau "heavy-tail",
+
+- poucos usuários muito confiáveis, grande massa de usuários com poucas conexões.
+
+Isso gera o comportamento típico:
+
+- PageRank concentrado em poucos nós,
+
+- similar ao que ocorre na web.
+
+---
+
+## Conclusão
+
+O experimento confirma que:
+
+- O PageRank do zero foi implementado corretamente.
+
+- Os resultados batem quase exatamente com o NetworkX.
+
+- Os usuários mais influentes são identificados com alta consistência.
+
+- As métricas de correlação confirmam robustez do método.
+
+- O gráfico demonstra alinhamento quase perfeito entre as implementações.
 
