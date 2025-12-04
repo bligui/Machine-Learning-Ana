@@ -92,6 +92,7 @@ As duas listas de top-10 foram praticamente idênticas, com diferenças insignif
 - A diferença entre os scores dos dois métodos é mínima (convergência consistente).
 
 - Isso valida a correção da implementação manual.
+
 ---
 
 ## Correlações Entre os Dois PageRanks
